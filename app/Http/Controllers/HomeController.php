@@ -38,7 +38,7 @@ class HomeController extends Controller
 
             $id = Auth::id();//user_id取得
             $user = User::find($id);
-            $user->newSubscription('main', 'plan_FbjLxUIWL3H5Y8')->create($request->stripeToken);
+            $user->newSubscription('main', 'plan_Fc8px1tk7iDipj')->trialDays(30)->create($request->token);
 
             return back();
         } catch (\Exception $ex) {
